@@ -11,7 +11,6 @@ public class Image implements Displayable {
 
     public Image(int width, int height) {
         image = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
-
     }
 
  public int getHeight(){
