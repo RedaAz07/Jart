@@ -7,13 +7,20 @@ import javax.imageio.ImageIO;
 
 public class Image implements Displayable {
 
-    private   BufferedImage image;
+    private BufferedImage image;
 
     public Image(int width, int height) {
         image = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
+        int black = Color.BLACK.getRGB();
+
+        for (int y = 0; y < height; y++) {
+            for (int x = 0; x < width; x++) {
+                image.setRGB(x, y, black);
+            }
+        }
     }
 
- public int getHeight(){
+    public int getHeight() {
         return image.getHeight();
     }
 
@@ -24,7 +31,8 @@ public class Image implements Displayable {
     @Override
     public void display(int x, int y, Color color) {
 
-        if (x < 0 || y < 0 || x >= image.getWidth() || y >= image.getHeight()) return;
+        if (x < 0 || y < 0 || x >= image.getWidth() || y >= image.getHeight())
+            return;
         int rgb = color.getRGB();
         image.setRGB(x, y, rgb);
     }

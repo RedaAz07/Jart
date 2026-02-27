@@ -2,7 +2,7 @@ package geometrical_shapes;
 
 import java.awt.Color;
 
-public class Triangle {
+public class Triangle implements Drawable {
     private Point p1;
     private Point p2;
     private Point p3;
@@ -25,7 +25,6 @@ public class Triangle {
         return p3;
     }
 
-
     public void draw(Displayable displayable) {
         Color color = getP1().getColor();
         Line l1 = new Line(getP1(), getP2(), color);
@@ -36,4 +35,8 @@ public class Triangle {
         l3.draw(displayable);
     }
 
+    @Override
+    public Color getColor() {
+        return getP1().getColor();
+    }
 }
