@@ -21,6 +21,15 @@ public class Line implements Drawable {
         return end;
     }
 
+    public Line random(int width, int height) {
+        int x1 = (int) (Math.random() * width);
+        int y1 = (int) (Math.random() * height);
+        int x2 = (int) (Math.random() * width);
+        int y2 = (int) (Math.random() * height);
+        Color color = getColor();
+        return new Line(new Point(x1, y1), new Point(x2, y2), color);
+    }
+
     @Override
     public void draw(Displayable displayable) {
         double x0 = start.getX();
