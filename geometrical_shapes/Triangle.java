@@ -26,7 +26,7 @@ public class Triangle implements Drawable {
     }
 
     public void draw(Displayable displayable) {
-        Color color = getP1().getColor();
+        Color color =getColor();
         Line l1 = new Line(getP1(), getP2(), color);
         Line l2 = new Line(getP2(), getP3(), color);
         Line l3 = new Line(getP3(), getP1(), color);
@@ -35,8 +35,4 @@ public class Triangle implements Drawable {
         l3.draw(displayable);
     }
 
-    @Override
-    public Color getColor() {
-        return getP1().getColor();
-    }
 }
